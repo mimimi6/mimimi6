@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>大阪府の紹介　観光スポットまとめ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2E6FA7;
+    --blue-deep:#1B4C73;
+    --sky:#EAF3FA;
+    --ink:#26313B;
+    --ink-soft:#5C6B78;
+    --paper:#F5F9FC;
+    --card:#FFFFFF;
+    --line:#DCE8F2;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 8% 6%, rgba(46,111,167,0.08) 0, transparent 38%),
+      radial-gradient(circle at 92% 10%, rgba(27,76,115,0.07) 0, transparent 36%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans JP', sans-serif;
+    line-height:1.9;
+    font-size:15.5px;
+  }
+
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:60px 24px 90px;
+  }
+
+  header{
+    text-align:center;
+    margin-bottom:50px;
+  }
+  header .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:linear-gradient(135deg, var(--blue), var(--blue-deep));
+    color:#fff;
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.14em;
+    padding:6px 16px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  header h1{
+    font-family:'Shippori Mincho', serif;
+    font-weight:800;
+    font-size:clamp(24px,5.4vw,32px);
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+  header p{
+    margin:0;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+
+  .spot{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(27,76,115,0.08);
+    margin-bottom:40px;
+  }
+  .spot:last-child{margin-bottom:0;}
+
+  .spot-photo{
+    width:100%;
+    aspect-ratio:16/10;
+    overflow:hidden;
+    background:var(--sky);
+    position:relative;
+  }
+  .spot-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .spot-photo .fallback{
+    display:none;
+    position:absolute;
+    inset:0;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:linear-gradient(135deg, var(--sky), #DCEAF5);
+    color:var(--blue-deep);
+    text-align:center;
+    padding:20px;
+  }
+  .spot-photo.broken img{display:none;}
+  .spot-photo.broken .fallback{display:flex;}
+  .fallback .icon{font-size:34px;}
+  .fallback p{
+    margin:0;
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .fallback a{
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-size:12.5px;
+    font-weight:700;
+    color:#fff;
+    background:linear-gradient(135deg, var(--blue), var(--blue-deep));
+    padding:7px 16px;
+    border-radius:999px;
+    text-decoration:none;
+  }
+
+  .spot-body{
+    padding:26px 28px 28px;
+  }
+  .spot-num{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:28px;height:28px;
+    border-radius:50%;
+    background:linear-gradient(150deg, var(--blue), var(--blue-deep));
+    color:#fff;
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-weight:900;
+    font-size:13px;
+    margin-right:8px;
+  }
+  .spot-body h2{
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-size:19px;
+    color:var(--ink);
+    margin:0 0 14px;
+    display:flex;
+    align-items:center;
+  }
+  .spot-body p{
+    margin:0 0 12px;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .spot-body p:last-of-type{
+    margin-bottom:18px;
+  }
+
+  .links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .links a{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--blue-deep);
+    background:var(--sky);
+    border:1px solid var(--line);
+    padding:8px 16px;
+    border-radius:999px;
+    text-decoration:none;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .links a:hover{
+    background:#DDEBF6;
+    transform:translateY(-1px);
+  }
+
+  footer{
+    margin-top:56px;
+    text-align:center;
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-size:11.5px;
+    letter-spacing:.16em;
+    color:var(--ink-soft);
+  }
+  footer span{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  footer span::before, footer span::after{
+    content:"";
+    width:24px;height:1px;
+    background:linear-gradient(90deg, transparent, var(--blue), transparent);
+  }
+
+  @media (max-width:520px){
+    .spot-body{padding:20px 20px 22px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">図書館情報技術論　第2回</div>
+    <h1>旅行で訪れたことのある大阪府の紹介</h1>
+    <p>観光スポットまとめ</p>
+  </header>
+
+  <div class="spot">
+    <div class="spot-photo" id="photo1">
+      <img src="https://www.skybldg.co.jp/observatory/img/i_rf_slide03.jpg?240301" alt="梅田スカイビル・空中庭園展望台" referrerpolicy="no-referrer" onerror="this.closest('.spot-photo').classList.add('broken')">
+      <div class="fallback">
+        <div class="icon">🏙️</div>
+        <p>画像は公式サイトでご覧いただけます</p>
+        <a href="https://www.skybldg.co.jp/" target="_blank" rel="noopener">公式サイトを見る</a>
+      </div>
+    </div>
+    <div class="spot-body">
+      <h2><span class="spot-num">1</span>梅田スカイビル</h2>
+      <p>梅田スカイビルは、新梅田シティ内にある地上40階、高さ約173mの超高層ビルで、2つのビルが並び、その頂上部分を円形の空中庭園展望台がつなぐ独特な構造が特徴。</p>
+      <p>「世界の建築トップ20」にも選出された建築美が魅力。展望台からは、大阪の街並みや遠くの山々を360度のパノラマビューで楽しめ、ハートロックなども体験できる。</p>
+      <div class="links">
+        <a href="https://www.google.co.jp/maps/place/%E6%A2%85%E7%94%B0%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%93%E3%83%AB/@34.7042162,135.4886352,16.07z/data=!3m1!5s0x6000e688863f7021:0x4ceb5b0522a7c0c0!4m15!1m8!3m7!1s0x6000e68d184cbfed:0xcddcd36b1d3ff7b9!2z44CSNTMwLTAwMDEg5aSn6Ziq5bqc5aSn6Ziq5biC5YyX5Yy65qKF55Sw!3b1!8m2!3d34.7005588!4d135.4957339!16zL20vMDIzcm5f!3m5!1s0x6000e6889074276f:0x57c2e32670decafd!8m2!3d34.7052872!4d135.4896527!16zL20vMDNfZjE3?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 MAP</a>
+        <a href="https://www.skybldg.co.jp/" target="_blank" rel="noopener">🔗 公式サイト</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="spot">
+    <div class="spot-photo" id="photo2">
+      <img src="https://static.wixstatic.com/media/fa280e_a5cc67677aa747e99ff8d8d216b7dd32~mv2.jpg/v1/fill/w_1480,h_1150,al_c/fa280e_a5cc67677aa747e99ff8d8d216b7dd32~mv2.jpg" alt="国立国際美術館" referrerpolicy="no-referrer" onerror="this.closest('.spot-photo').classList.add('broken')">
+      <div class="fallback">
+        <div class="icon">🖼️</div>
+        <p>画像は公式サイトでご覧いただけます</p>
+        <a href="https://www.nmao.go.jp/" target="_blank" rel="noopener">公式サイトを見る</a>
+      </div>
+    </div>
+    <div class="spot-body">
+      <h2><span class="spot-num">2</span>国立国際美術館</h2>
+      <p>国立国際美術館は、国内外の現代美術を中心とした作品を収集・保管・展示をしている、施設の大部分が地下にある国内最大級の美術館。</p>
+      <p>地上にはシーザー・ペリが設計した、竹の生命力と現代美術の成長をイメージした鉄骨のモニュメント（エントランス）のみがそびえている。</p>
+      <div class="links">
+        <a href="https://www.google.co.jp/maps/place/%E5%9B%BD%E7%AB%8B%E5%9B%BD%E9%9A%9B%E7%BE%8E%E8%A1%93%E9%A4%A8/@34.6981739,135.4908798,16.66z/data=!4m6!3m5!1s0x6000e6f6cc3aaaab:0x8abe7f03b14e0fe5!8m2!3d34.6917819!4d135.491984!16s%2Fm%2F026bfjy?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 MAP</a>
+        <a href="https://www.nmao.go.jp/" target="_blank" rel="noopener">🔗 公式サイト</a>
+      </div>
+    </div>
+  </div>
+
+  <footer><span>2026.9.26</span></footer>
+
+</div>
+</body>
+</html>
