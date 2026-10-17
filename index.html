@@ -1,155 +1,46 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>図書館情報技術論　第1回</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#2C2C2C;
-    --ink-soft:#666666;
-    --accent:#3E6E63;
-    --line:#E4E1D8;
-    --paper:#FDFCF9;
-    --card:#FFFFFF;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Noto Sans JP', sans-serif;
-    line-height:1.9;
-    font-size:15.5px;
-  }
-  .wrap{
-    max-width:680px;
-    margin:0 auto;
-    padding:64px 24px 90px;
-  }
 
-  header{
-    margin-bottom:56px;
-    padding-bottom:28px;
-    border-bottom:1px solid var(--line);
-  }
-  header .kicker{
-    font-size:12px;
-    letter-spacing:.18em;
-    color:var(--accent);
-    font-weight:700;
-    margin-bottom:10px;
-  }
-  header h1{
-    font-family:'Shippori Mincho', serif;
-    font-weight:700;
-    font-size:30px;
-    margin:0;
-    color:var(--ink);
-  }
 
-  section{
-    margin-bottom:52px;
-  }
-  section h2{
-    font-family:'Shippori Mincho', serif;
-    font-size:19px;
-    font-weight:700;
-    color:var(--ink);
-    margin:0 0 24px;
-    padding-left:14px;
-    border-left:4px solid var(--accent);
-  }
 
-  .entry{
-    margin-bottom:28px;
-  }
-  .entry:last-child{
-    margin-bottom:0;
-  }
-  .entry h3{
-    font-size:15.5px;
-    font-weight:700;
-    color:var(--accent);
-    margin:0 0 8px;
-  }
-  .entry p{
-    margin:0;
-    color:var(--ink);
-  }
+<html id="bibi">
 
-  .booklist{
-    list-style:none;
-    margin:0;
-    padding:0;
-  }
-  .booklist li{
-    padding:14px 0;
-    border-bottom:1px solid var(--line);
-    color:var(--ink);
-  }
-  .booklist li:last-child{
-    border-bottom:none;
-    color:var(--ink-soft);
-    font-size:13.5px;
-    font-style:italic;
-  }
 
-  footer{
-    margin-top:70px;
-    padding-top:20px;
-    border-top:1px solid var(--line);
-    text-align:center;
-    font-size:12px;
-    letter-spacing:.1em;
-    color:var(--ink-soft);
-  }
+	<head>
 
-  @media (max-width:520px){
-    .wrap{padding:44px 20px 70px;}
-    header h1{font-size:25px;}
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <header>
-    <div class="kicker">LIBRARY &amp; INFORMATION TECHNOLOGY</div>
-    <h1>図書館情報技術論　第1回</h1>
-  </header>
+		<title>This E-Book is Published with Bibi | EPUB Reader on your website.</title>
 
-  <section>
-    <h2>夏休みにしたこと</h2>
+		<!-- # Bibi ... Copyright (c) Satoru MATSUSHIMA - https://bibi.epub.link or https://github.com/satorumurmur/bibi (Licensed under the MIT license.) -->
 
-    <div class="entry">
-      <h3>図書館のボランティア</h3>
-      <p>書架整斉と除籍済み図書処理作業の仕事を体験した。書架整斉は一人で黙々と本を並べなおしたり、前に移動させたりする時間が楽しかった🎶　除籍済み図書処理作業は終わったものが目に見えて実感できたので、達成感が得られた🎶</p>
-    </div>
+		<!-- 「わたしのことは『ビビ』と呼んでください。『ビビ』はわたしの名前なんです」 —— エレクトラ・パブリケーヌ『ビビのみぎくるぶし』 -->
+		<!-- 「まあ！　それじゃあやっぱり、『ビビ』はわたしの“名前”だったのですね？」 —— ソフィア・パインアイランド『ビビさんたちのこと』 -->
+		<!-- 「このあたりにビビさんという人がいると聞いて来たのですが、あなたですか？」 —— ビビ・ララルー『ポケットに眼鏡』 -->
 
-    <div class="entry">
-      <h3>三社合同企業セミナー</h3>
-      <p>私服でと書いてあったのでオフィスカジュアルで行ったら、周りが三年生だらけでスーツの人しかいなくて驚いた。昼食を食べながら企業の方とお話しする機会があって質問をするべきだったと思ったが、お肉が美味しくて食べる方に集中してしまった。</p>
-    </div>
+		<link id="bibi-style" rel="stylesheet" href="../../bibi/resources/styles/bibi.css" />
+		<link id="bibi-dress" rel="stylesheet" href="../../bibi/wardrobe/everyday/bibi.dress.css" />
+		<script id="bibi-script" src="../../bibi/resources/scripts/bibi.js"></script>
+		<script id="bibi-preset" src="../../bibi/presets/default.js" data-bibi-bookshelf="../bookshelf"></script>
 
-    <div class="entry">
-      <h3>ゼミ用の資料探し</h3>
-      <p>自分が探求したいテーマは何かを定めることはできなかったが、本や論文を軽く読んで方向性は決められたと思う。</p>
-    </div>
-  </section>
+	</head>
 
-  <section>
-    <h2>最近読んだ本</h2>
-    <ul class="booklist">
-      <li>遠山美都男『天平の三姉妹　聖武皇女の矜持と悲劇』中央公論新社、2010年。</li>
-    </ul>
-  </section>
 
-  <footer>図書館情報技術論　</footer>
+	<body data-bibi-book="">
 
-</div>
-</body>
+		<div id="bibi-info">
+			<h1>This E-Book is Published on the Web with Bibi | EPUB Reader on your website.</h1>
+			<ul>
+				<li><a href="https://bibi.epub.link">Bibi | EPUB Reader on your website. (Official Website / Japanese)</a></li>
+				<li><a href="https://github.com/satorumurmur/bibi">Bibi on GitHub (English)</a></li>
+			</ul>
+		</div>
+
+		<div id="bibi-book-data" data-bibi-book-mimetype="application/epub+zip" hidden="hidden">
+		</div>
+
+	</body>
+
+
 </html>
